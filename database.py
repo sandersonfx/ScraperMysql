@@ -5,6 +5,8 @@ import os
 
 load_dotenv()
 
+#DBTESTE
+DATA_TESTe= 'TESTE'
 DATABASE_NAME = os.getenv("DATABASE_NAME")
 DATABASE_HOST = os.getenv("DATABASE_HOST")
 DATABASE_USER = os.getenv("DATABASE_USER")
