@@ -1,6 +1,7 @@
 from webdriver import Webdriver
 from openpyxl import Workbook, load_workbook
 from database import insert_relatorio_0063, insert_relatorio_0123, insert_relatorio_0053, insert_relatorio_0051, insert_relatorio_0004, insert_relatorio_0186, add_log, update_status
+from selenium.webdriver.common.by import By
 
 import time
 import os
