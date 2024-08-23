@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Baixar e instalar a última versão estável do Google Chrome
 RUN apt-get update && \
-    apt-get install -y wget gnupg unzip curl && \
+    apt-get install -y wget gnupg unzip && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     apt-get install -y ./google-chrome-stable_current_amd64.deb || apt-get install -f -y && \
     rm -rf /var/lib/apt/lists/* && \
