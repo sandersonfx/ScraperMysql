@@ -34,4 +34,4 @@ RUN pip install --upgrade pip && \
 EXPOSE 7000
 
 # Comando para executar a aplicação
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:7000", "main:app", "--log-level", "info"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:7000", "app:app", "--log-level", "info"]
