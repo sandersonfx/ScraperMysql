@@ -29,17 +29,26 @@ def login(driver):
 
         time.sleep(5)
 
-        emailForm = driver.execute_script("return document.getElementById('formEmail')")
-        passwordForm = driver.execute_script("return document.getElementById('formSenha')")
+        #emailForm = driver.execute_script("return document.getElementById('email-input')")
 
+        emailForm = driver.find_element(By.CSS_SELECTOR, "#single-spa-application\\:\\@hyperlocal\\/auth > div > div > div > div.flex.flex-col.w-full.justify-center > div.flex.flex-col.gap-y-inline-sm.mobile\\:pb-4 > div.flex.flex-col > div:nth-child(3) > div > input")
+
+        #passwordForm = driver.execute_script("return document.getElementById('password-input')")
+        passwordForm = driver.find_element(By.CSS_SELECTOR, "#single-spa-application\\:\\@hyperlocal\\/auth > div > div > div > div.flex.flex-col.w-full.justify-center > div.flex.flex-col.gap-y-inline-sm.mobile\\:pb-4 > div.flex.flex-col > div:nth-child(4) > div > input")
+       
         emailForm.send_keys(EMPRESA_EMAIL)
         passwordForm.send_keys(EMPRESA_PASSWORD)
 
         time.sleep(1)
 
-        driver.execute_script("document.getElementsByClassName('matomo-realizar-login')[0].click()")
+        #driver.execute_script("document.getElementsByClassName('matomo-realizar-login')[0].click()")
+        # Encontra o botão de login usando o seletor CSS
+        login_button = driver.find_element(By.CSS_SELECTOR, "#single-spa-application\:\@hyperlocal\/auth > div > div > div > div.flex.flex-col.w-full.justify-center > div.flex.flex-col.gap-y-inline-sm.mobile\:pb-4 > div:nth-child(2) > div > button.ease.flex.h-stack-md.cursor-pointer.flex-row.items-center.justify-center.gap-inline-x2s.rounded-sm.p-squished-md.font-base.text-xs.font-medium.leading-md.transition-\[background\,color\,border-color\].duration-300.border-\[2px\].border-primary-main.bg-primary-main.text-neutral-white.hover\:border-primary-dark.hover\:bg-primary-dark.focus\:border-primary-darker.focus\:bg-primary-darker.active\:border-primary-darker.active\:bg-primary-darker")
+        login_button.click()  # Clica no botão de login
 
-        time.sleep(5)
+
+
+        time.sleep(15)
 
         driver.execute_script("document.getElementsByClassName('btn cursor-pointer')[0].click()")
 
